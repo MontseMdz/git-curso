@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap');
+:root{
+     --color-firstPink: #FF00FF;
+     --color-firstPurple: #1C0227;
+     --color-secondPurple: #76039D;
+     --color-fourthPurple: #9303AF;
+     --color-fifthPurple: #3c1053;
+     --color-firstWhite: #fff;
+     --color-background: #f3eced;
+     --color-gray: #EDDBF7;
+     --general-space: 0 50px;;
+     --second-space: 60px 50px;
+     --border-parallax: 3px solid var(--color-secondPurple);
+     --box-shadow: var(--color-firstPurple) 5px 5px 10px;
+}
+*{
+     font-family: 'Poppins', sans-serif;
+     font-size: 16px;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body{
+     background: var(--color-firstPurple); /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right top, #1c0227, #29093b, #390b51, #4a0b67, #5c0a7e, #5f0a82, #630b86, #660b8a, #5b0e7c, #50106e, #461060, #3c1053); /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right top, #1c0227, #29093b, #390b51, #4a0b67, #5c0a7e, #5f0a82, #630b86, #660b8a, #5b0e7c, #50106e, #461060, #3c1053); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+}
+a{
+     text-decoration: none;
+}
+ul{
+     list-style: none;
+}
+p{
+     font-size: 0.9rem;
+     font-weight: 300;
+     text-align: justify;
+     margin-bottom: 10px;
+}
+strong{
+     font-size: 0.9rem;
+}
+h2, h3{
+     font-size: 1rem;
+     font-weight: bold;
+}
+ion-icon{
+     font-size: 42px;
+}
+.title{
+     background-color: var(--color-firstPink);
+     border-radius: 10px;
+     color: var(--color-firstWhite);
+     display: inline-block;
+     letter-spacing: 1px;
+     padding: 10px 5px;
+     text-align: center;
+}
+.left-mov{
+     position: absolute;
+     top: -20px;
+     left: 14px;
+}
+.right-mov{
+     position: absolute;
+     top: -20px;
+     right: 14px;
+}
+hr{
+     border: 0;
+     height: 2px;
+     background: var(--color-fifthPurple);
+     background-image: linear-gradient(to right, var(--color-fourthPurple), var(--color-fifthPurple), var(--color-fourthPurple));
+}
+/* ====================  header  ====================*/
+header{
+     width: 100%;
+     position: relative;
+     display: flex;
+     flex-direction: column;
+}
+header .wave{
+     position: absolute;
+     width: 100%;
+     top: 0;
+     height: 130px;
+}
+nav{
+     width: 100%;
+     height: 50px;
+     padding: var(--general-space);
+     z-index: 1;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+nav .logo{
+     width: 60px;
+}
+nav .navigation{
+     display: none;
+}
+nav .navigation li{
+     display: inline-block;
+     padding: 10px 20px;
+     border-radius: 14px;
+     transition: 0.3s linear;
+}
+nav .navigation a{
+     font-size: 1.16rem;
+}
+nav .navigation li:hover{
+     background-color: var(--color-fourthPurple);
+     cursor: pointer;
+}
+nav .navigation li:hover a{
+     color: var(--color-firstWhite);
+}
+nav .navigation a{
+     color: var(--color-secondPurple);
+     transition: 0.3s;
+     font-weight: bold;
+     text-transform: uppercase;
+}
+input{
+     display: none;
+}
+label{
+     cursor: pointer;
+     display: block;
+}
+label .menu-btn, label .close-btn{
+     font-size: 22px;
+}
+label .close-btn{
+     color: var(--color-firstWhite);
+     display: none;
+}
+#check:checked ~ header .navigation{
+     background: var(--color-fifthPurple);
+     opacity: 0.9;
+     z-index: 2;
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+#check:checked ~ header .navigation a{
+     margin-right: 0;
+     margin-bottom: 50px;
+     letter-spacing: 3px;
+}
+#check:checked ~ header label .menu-btn{
+     color: var(--color-secondPurple);
+     display: none;
+}
+#check:checked ~ header label .close-btn{
+     z-index: 2;
+     display: block;
+     position: fixed;
+     top: 32px;
+     right: 52px;
+}
+@media (min-width: 576px) and (max-width: 768px){
+     p{
+          font-size: 1rem;
+     }
+     h2, h3{
+          font-size: 1.2rem;
+     }
+     nav .logo{
+          width: 90px;
+     }
+     label .menu-btn, label .close-btn{
+          font-size: 1.2rem;
+     }
+}
+@media (min-width: 768px){
+     nav{
+          height: 80px;
+     }
+     nav .logo{
+          width: 130px;
+     }
+     header .wave{
+          height: 210px;
+     }
+     a, p{
+          font-size: 1.25rem;
+     }
+     a{
+          font-weight: 500;
+     }
+     a:hover{
+          color: var(--color-fourthPurple);
+     }
+     h2, h3{
+          font-size: 1.30rem;
+     }
+     ion-icon{
+          font-size: 64px;
+     }
+     .title{
+          letter-spacing: 2px;
+          padding: 10px 25px;
+     }
+     .left-mov{
+          top: -25px;
+          left: 30px;
+     }
+     .right-mov{
+          top: -25px;
+          right: 30px;
+     }
+}
+@media (min-width: 992px){
+     nav{
+          padding: 0 130px;
+     }
+     nav .navigation{
+          display: block;
+     }
+     nav .navigation li{
+          margin-left: 10px;
+     }
+     nav .navigation a{
+          font-size: 1.2rem;
+     }
+     label{
+          display: none;
+     }
+}
+/* ====================  img-div  ====================*/
+#img-div{
+     display: flex;
+     flex-direction: column;
+}
+#img-div > img{
+     max-width: 100%;
+     height: auto;
+     margin: 0 auto;
+     border-radius: 30% 70% 70% 30% / 25% 47% 53% 75%;
+     order: 2;
+}
+#img-div #img-caption{
+     padding: var(--general-space);
+     order: 1;
+}
+#img-caption #title{
+     color: var(--color-firstWhite);
+     font-family: 'Dr Sugiyama', sans-serif;
+     font-size: 2.5rem;
+     letter-spacing: 1px;
+     padding: 20px 0 0 0;
+     text-align: center;
+}
+@media (min-width: 768px){
+     #img-caption #title{
+          font-size: 3.4rem;
+          letter-spacing: 2px;
+     }
+}
+@media (min-width: 992px){
+     #img-div #img-caption{
+          padding: 0 130px;
+     }
+}
+/* ====================  boxes  ====================*/
+#boxes{
+     background-color: var(--color-background);
+     border-radius: 20px;
+     box-shadow: var(--box-shadow);
+     margin: 100px 50px;
+     padding: 50px 15px;
+     position: relative;
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: center;
+}
+#boxes .item{
+     border: 3px solid var(--color-fourthPurple);
+     border-radius: 15px;
+     margin-bottom: 30px;
+     display: flex;
+     flex-direction: column;
+}
+#boxes .item img{
+     flex-basis: 100%;
+     width: 120px;
+     margin: 20px auto;
+     background-color: var(--color-gray);
+     border-radius: 50%;
+}
+#boxes .item .text-right{
+     flex-basis: 100%;
+     padding: 10px;
+}
+#boxes .item h3{
+     color: var(--color-firstPink);
+     text-align: center;
+     padding-bottom: 10px;
+}
+@media (min-width: 768px){
+     #boxes{
+          border-radius: 40px;
+          padding: 50px 0px;
+     }
+     #boxes .item{
+          align-items: center;
+          flex-basis: 40%;
+          margin: 30px 20px;
+     }
+     #boxes .item img{
+          flex-basis: 30%;
+     }
+     #boxes .item .text-right{
+          flex-basis: 70%;
+     }
+}
+@media (min-width: 992px){
+     #boxes{
+          margin: 100px 130px;
+     }
+     #boxes .item{
+          flex-basis: 30%;
+     }
+}
+/* ====================  parallax  ====================*/
+#parallax{
+     width: 100%;
+     height: 250px;;
+     background-image: url('https://img.olympicchannel.com/images/image/private/t_16-9_1240-700/f_auto/v1538355600/primary/zeievodyknbavviwnu0h');
+     background-attachment: fixed;
+     background-size: cover;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.parallax-text{
+     width: 80%;
+     text-align: right;
+     border-top: var(--border-parallax);
+     border-bottom: var(--border-parallax);
+}
+.parallax-text blockquote{
+     font-weight: 500;
+     font-size: 0.9rem;
+     text-align: justify;
+}
+.parallax-text cite{
+     font-size: 200;
+     font-size: 0.8rem;
+}
+@media (min-width: 576px) and (max-width: 768px){
+     #parallax{
+          height: 300px;
+     }
+     .parallax-text blockquote, .parallax-text cite{
+          font-size: 1rem;
+     }
+}
+@media (min-width: 768px){
+     #parallax{
+          height: 400px;
+     }
+     .parallax-text{
+          padding: 30px 0;
+     }
+     .parallax-text blockquote, .parallax-text cite{
+          font-size: 1.25rem;
+     }
+}
+/* ====================  tribute  ====================*/
+#tribute-info{
+     background-color: var(--color-background);
+     border-radius: 20px;
+     box-shadow: var(--box-shadow);
+     padding: 30px 20px;
+     margin: var(--second-space);
+     display: flex;
+     flex-flow: column wrap;
+     align-items: center;
+}
+#tribute-info .title{
+     margin: 0 auto;
+}
+ul.gold-medals, ul.silver-medals, ul.bronze-medals{
+     margin: 20px 0;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+ul.gold-medals li, ul.silver-medals li, ul.bronze-medals li{
+     flex-basis: 100%;
+     text-align: center;
+}
+ul.gold-medals p, ul.silver-medals p, ul.bronze-medals p{
+     text-align: center;
+}
+ul.gold-medals > li ion-icon{
+     color: #FFCC1D;
+}
+ul.silver-medals > li ion-icon{
+     color: #AAA492;
+}
+ul.bronze-medals > li ion-icon{
+     color: #D06224;
+}
+#tribute-link{
+     background-image: linear-gradient(to right, var(--color-firstPink) 0%, var(--color-fourthPurple) 51%, var(--color-firstPink) 100%);
+     color: var(--color-firstWhite);
+     font-size: 0.9rem;
+     font-weight: bold;
+     letter-spacing: 1px;
+     padding: 10px 30px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     box-shadow: 0 0 20px var(--color-fourthPurple);
+     border-radius: 10px;
+}
+#tribute-link:hover{
+     background-position: right center;
+}
+@media (min-width: 576px) and (max-width: 768px){
+     ul.gold-medals li, ul.silver-medals li, ul.bronze-medals li{
+          flex-basis: 50%;
+     }
+     #tribute-link{
+          font-size: 1rem;
+          margin-top: 30px;
+          padding: 15px 100px;
+     }
+}
+@media (min-width: 768px){
+     #tribute-info{
+          border-radius: 40px;
+          padding: 30px 10px;
+     }
+     #tribute-info .title{
+          margin: 30px 0 15px 0;
+     }
+     ul.gold-medals li, ul.silver-medals li, ul.bronze-medals li{
+          margin: 25px 5px;
+          flex-basis: 30%;
+     }
+     #tribute-link{
+          font-size: 1.2rem;
+          letter-spacing: 2px;
+          margin-top: 60px;
+          padding: 15px 150px;
+     }
+}
+@media (min-width: 992px){
+     #boxes{
+          margin:  100px 130px;
+     }
+}
+/* ====================  footer  ====================*/
+footer{
+     height: 100px;
+     padding: 0 50px;
+     color: var(--color-firstWhite);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
